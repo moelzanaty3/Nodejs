@@ -34,4 +34,12 @@
   - Static & Dynamic configuration 
   - Support for all HTTP verbs 
   - Order based 
-- 
+
+  - Express Site 
+    - Routing refers to how an application’s endpoints (URIs) respond to client requests.
+    - Each route can have one or more handler functions, which are executed when the route is matched.  
+    - app.METHOD(PATH, HANDLER)
+      - app is an instance of express.
+      - METHOD is an HTTP request method, in lowercase.
+      - PATH is a path on the server.
+      - HANDLER is the function executed when the route is matched.

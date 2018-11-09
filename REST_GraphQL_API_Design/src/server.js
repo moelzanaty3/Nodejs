@@ -3,13 +3,16 @@ import express from 'express'
 // Declare an app from express
 const app = express()
 
-const apiRouter = express.Router()
-apiRouter.get('/', (req, res) => res.json({ api: true }))
-apiRouter.get('*', (req, res) => res.json({ apiAll: true }))
+// Respond with Hello World! on the homepage:
+app.get('/', (req, res) => res.send('Hello World!'))
 
-app.use('/api', apiRouter)
+// Respond to POST request on the root route(/), the application’s home page:
+app.post('/', (req, res) => res.send('Got a POST request'))
 
-app.get('/', (req, res) => res.json({ backslash: true }))
-app.all('*', (req, res) => res.json({ all: 'hello *' }))
+// Respond to a PUT request to the /user route:
+app.put('/user', (req, res) => res.send('Got a PUT request at /user'))
+
+// Respond to a DELETE request to the /user route:
+app.delete('/user', (req, res) => res.send('Got a DELETE request at /user'))
 
 export default app
