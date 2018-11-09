@@ -1,0 +1,29 @@
+- What's Node js ? 
+  - Platfrom build on Chrome's V8 engine that can be used out of the browser to 
+    build tooling and network based applications. 
+  - Created by Ryan Dahl 
+  - Open Source 
+- HTTP in Node 
+  - Node comes with built in module for creating network based apps. 
+  - Just a library, not a framework 
+- Node Server Framerworks 
+  - Connect (baseline framwrok)
+  - Express (based on connect)
+  - Koa (from express creators)
+  - Hapi 
+  - Salis (based on express)
+
+- Why express 
+  - The go to for creating API's with node
+  - Tons of plugins and integrations
+  - Feature 
+    - Declarative routing 
+      - Exact, pattern, glob, parameter matching 
+    - Middleware 
+      - Functions to run serially on your requests 
+    - Powerful response options 
+      - From JSON to static files 
+      - Stream 
+      - Redirects 
+    - DB agnostic 
+    - Highly configurable 

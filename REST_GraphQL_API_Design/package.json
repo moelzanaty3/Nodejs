@@ -1,0 +1,53 @@
+{
+    "name": "rest_graphql_api_design",
+    "version": "1.0.0",
+    "description": "REST & GraphQL API Design in Node.js, v2 (using Express & MongoDB)",
+    "main": "App.js",
+    "author": "Mohammed Elzanaty",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack-dev-server --colors --progress --mode=development",
+        "build": "webpack --mode=production",
+        "test:unit": "NODE_ENV=testing rm -rf ./tmp/mocha-webpack && mocha-webpack --webpack-config webpack.testing.js \"src/**/*.spec.js\" --timeout 10000 --require source-map-support/register",
+        "test": "npm run test:unit"
+    },
+    "dependencies": {
+        "apollo-server-express": "^2.2.0",
+        "bcrypt": "^3.0.2",
+        "express": "^4.16.4",
+        "express-jwt": "^5.3.1",
+        "graphql-tools": "^4.0.3",
+        "jsonwebtoken": "^8.3.0",
+        "lodash.merge": "^4.6.1",
+        "mongoose": "^5.3.10"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-transform-regenerator": "^6.26.0",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.6.0",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-eslint": "^10.0.1",
+        "chai": "^4.2.0",
+        "chai-http": "^4.2.0",
+        "eslint": "^5.8.0",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.2",
+        "eslint-plugin-react": "^7.11.1",
+        "graphql-tag": "^2.10.0",
+        "mocha": "^5.2.0",
+        "mocha-webpack": "^1.1.0",
+        "prettier": "^1.15.1",
+        "raw-loader": "^0.5.1",
+        "source-map-support": "^0.5.9",
+        "start-server-webpack-plugin": "^2.2.5",
+        "webpack": "^4.25.1",
+        "webpack-dev-middleware": "^3.4.0",
+        "webpack-dev-server": "^3.1.10",
+        "webpack-merge": "^4.1.4",
+        "webpack-cli": "^3.1.2",
+        "webpack-node-externals": "^1.7.2"
+    }
+}
