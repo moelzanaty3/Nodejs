@@ -7,7 +7,7 @@
     "license": "MIT",
     "scripts": {
         "start": "webpack-dev-server --colors --progress --mode=development",
-        "build": "webpack --mode=production",
+        "build": "webpack  --colors --progress --mode=production",
         "test:unit": "NODE_ENV=testing rm -rf ./tmp/mocha-webpack && mocha-webpack --webpack-config webpack.testing.js \"src/**/*.spec.js\" --timeout 10000 --require source-map-support/register",
         "test": "npm run test:unit"
     },

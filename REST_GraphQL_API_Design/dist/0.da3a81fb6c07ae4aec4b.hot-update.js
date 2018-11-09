@@ -1,0 +1,2 @@
+require("source-map-support").install(),exports.id=0,exports.modules={"./src/index.js":function(r,e,s){"use strict";s.r(e);var o=s("express");s.n(o)()().listen(3e3,"127.0.0.1",function(){console.log("now your server run @ port 3000")})}};
+//# sourceMappingURL=0.da3a81fb6c07ae4aec4b.hot-update.js.map
