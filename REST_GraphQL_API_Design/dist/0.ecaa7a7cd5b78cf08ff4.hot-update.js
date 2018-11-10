@@ -1,2 +1,0 @@
-require("source-map-support").install(),exports.id=0,exports.modules={"./src/index.js":function(n,r,e){"use strict";e.r(r);var o=e("express"),t=e.n(o)()();apiRouter.get("/",function(n,r){return r.json({api:!0})}),apiRouter.get("*",function(n,r){return r.json({apiAll:!0})}),t.get("/",function(n,r){return r.json({backslash:!0})}),t.all("*",function(n,r){return r.json({all:"hello *"})});t.listen(3e3,"127.0.0.1",function(){console.log("now your server run @ port 3000")})}};
-//# sourceMappingURL=0.ecaa7a7cd5b78cf08ff4.hot-update.js.map
