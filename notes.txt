@@ -35,29 +35,37 @@
   - Support for all HTTP verbs 
   - Order based 
 
-  - Express Site 
-    - Routing 
-      - Routing refers to how an application’s endpoints (URIs) respond to client requests.
-      - Each route can have one or more handler functions, which are executed when the route is matched.  
-      - app.METHOD(PATH, HANDLER)
-        - app is an instance of express.
-        - METHOD is an HTTP request method, in lowercase.
-        - PATH is a path on the server.
-        - HANDLER is the function executed when the route is matched.
-      - use app.all() to handle all HTTP methods.
-      - use app.use() to specify middleware as the callback function
-    
-    - Middleware
-      - Middleware functions are functions that have access to the request object (req), the response object (res)
-      - The next function in the application’s request-response cycle.
-      - The next function is a function in the Express router which, when invoked, 
-        executes the middleware succeeding the current middleware.
-      - Middleware functions can perform the following tasks:
-        - Execute any code.
-        - Make changes to the request and the response objects.
-        - End the request-response cycle.
-        - Call the next middleware in the stack. 
-      - If the current middleware function does not end the request-response cycle, 
-        it must call next() to pass control to the next middleware function. 
-        Otherwise, the request will be left hanging.
-      - To load the middleware function, call app.use(), specifying the middleware function. 
+
+
+
+
+
+
+
+- Express Site 
+  - Routing 
+    - Routing refers to how an application’s endpoints (URIs) respond to client requests.
+    - Each route can have one or more handler functions, which are executed when the route is matched.  
+    - app.METHOD(PATH, HANDLER)
+      - app is an instance of express.
+      - METHOD is an HTTP request method, in lowercase.
+      - PATH is a path on the server.
+      - HANDLER is the function executed when the route is matched.
+    - use app.all() to handle all HTTP methods.
+    - use app.use() to specify middleware as the callback function
+  
+  - Middleware
+    - Middleware functions are functions that have access to the request object (req), the response object (res)
+    - The next function in the application’s request-response cycle.
+    - The next function is a function in the Express router which, when invoked, 
+      executes the middleware succeeding the current middleware.
+    - Middleware functions can perform the following tasks:
+      - Execute any code.
+      - Make changes to the request and the response objects.
+      - End the request-response cycle.
+      - Call the next middleware in the stack. 
+    - If the current middleware function does not end the request-response cycle, 
+      it must call next() to pass control to the next middleware function. 
+      Otherwise, the request will be left hanging.
+    - To load the middleware function, call app.use(), specifying the middleware function. 
+  
