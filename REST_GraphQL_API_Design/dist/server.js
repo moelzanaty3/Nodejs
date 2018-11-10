@@ -21,7 +21,7 @@ require("source-map-support").install();
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e54c5ece0bbe00d7a828"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e466c180154cb784a8e6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -873,7 +873,16 @@ var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
  *          res         : HTTP response argument to the middleware function, called "res" by convention
  *          next        : Callback argument to the middleware function, called "next" by convention.
  */
-
+var requestTime = function requestTime(req, res, next) {
+    req.requestTime = Date.now();
+    next();
+};
+app.use(requestTime);
+app.get('/', function (req, res) {
+    var responseText = 'Hello World!<br>';
+    responseText += '<small>Requested at: ' + req.requestTime + '</small>';
+    res.send(responseText);
+});
 /* harmony default export */ __webpack_exports__["default"] = (app);
 
 /***/ }),
