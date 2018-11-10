@@ -1,8 +1,17 @@
+import http from 'http'
 import app from './server'
 
-const hostname = '127.0.0.1'
+const server = http.createServer(app)
 const port = 3000
+let currentApp = app
 
-app.listen(port, hostname, () => {
-    console.log(`now server run @  http://${hostname}/${port}`)
+server.listen(port, () => {
+    console.log(`Server listening on port ${port}`)
 })
+if (module.hot) {
+    module.hot.accept(['./server'], () => {
+        server.removeListener('request', currentApp)
+        server.on('request', app)
+        currentApp = app
+    })
+}

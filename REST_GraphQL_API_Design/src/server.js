@@ -11,11 +11,5 @@ const app = express()
  *          res         : HTTP response argument to the middleware function, called "res" by convention
  *          next        : Callback argument to the middleware function, called "next" by convention.
  */
-app.get('/user', (res, req) => {
-    req.json({ user: 200 })
-})
 
-app.get('/', (res, req) => {
-    req.json({ ok: 200 })
-})
 export default app

@@ -21,7 +21,7 @@ require("source-map-support").install();
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5379f768669e3fb1bb62"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e54c5ece0bbe00d7a828"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -830,15 +830,26 @@ if(true) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__server__ = __webpack_require__("./src/server.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_http__ = __webpack_require__("http");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_http___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_http__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__server__ = __webpack_require__("./src/server.js");
 
 
-var hostname = '127.0.0.1';
+
+var server = __WEBPACK_IMPORTED_MODULE_0_http___default.a.createServer(__WEBPACK_IMPORTED_MODULE_1__server__["default"]);
 var port = 3000;
+var currentApp = __WEBPACK_IMPORTED_MODULE_1__server__["default"];
 
-__WEBPACK_IMPORTED_MODULE_0__server__["a" /* default */].listen(port, hostname, function () {
-    console.log('now server run @  http://' + hostname + '/' + port);
+server.listen(port, function () {
+    console.log('Server listening on port ' + port);
 });
+if (true) {
+    module.hot.accept(["./src/server.js"], function(__WEBPACK_OUTDATED_DEPENDENCIES__) { /* harmony import */ __WEBPACK_IMPORTED_MODULE_1__server__ = __webpack_require__("./src/server.js"); (function () {
+        server.removeListener('request', currentApp);
+        server.on('request', __WEBPACK_IMPORTED_MODULE_1__server__["default"]);
+        currentApp = __WEBPACK_IMPORTED_MODULE_1__server__["default"];
+    })(__WEBPACK_OUTDATED_DEPENDENCIES__); });
+}
 
 /***/ }),
 
@@ -846,6 +857,7 @@ __WEBPACK_IMPORTED_MODULE_0__server__["a" /* default */].listen(port, hostname, 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__("express");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
 
@@ -861,14 +873,8 @@ var app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
  *          res         : HTTP response argument to the middleware function, called "res" by convention
  *          next        : Callback argument to the middleware function, called "next" by convention.
  */
-app.get('/user', function (res, req) {
-    req.json({ user: 200 });
-});
 
-app.get('/', function (res, req) {
-    req.json({ ok: 200 });
-});
-/* harmony default export */ __webpack_exports__["a"] = (app);
+/* harmony default export */ __webpack_exports__["default"] = (app);
 
 /***/ }),
 
@@ -885,6 +891,13 @@ module.exports = __webpack_require__("./src/index.js");
 /***/ (function(module, exports) {
 
 module.exports = require("express");
+
+/***/ }),
+
+/***/ "http":
+/***/ (function(module, exports) {
+
+module.exports = require("http");
 
 /***/ })
 
