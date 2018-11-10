@@ -43,3 +43,5 @@
       - METHOD is an HTTP request method, in lowercase.
       - PATH is a path on the server.
       - HANDLER is the function executed when the route is matched.
+    - use app.all() to handle all HTTP methods.
+    - use app.use() to specify middleware as the callback function
