@@ -1,0 +1,26 @@
+repo            -> https://github.com/wesbos/Learn-Node
+account         -> https://courses.wesbos.com/account
+mablab          -> https://mlab.com/databases/dang-thats-delicious
+clould.mongo    -> https://cloud.mongodb.com/v2/5b5d8a2ed383ad49f8e10a07#clusters 
+install mongo   -> 
+        - https://www.tecmint.com/install-mongodb-on-ubuntu-18-04/
+        - https://askubuntu.com/questions/842592/apt-get-fails-on-16-04-or-18-04-installing-mongodb
+remove monogo   ->
+        # apt-get remove mongodb-org mongodb-org-mongos mongodb-org-server mongodb-org-shell mongodb-org-tools
+        # dpkg --get-selections | grep mongo
+        mongodb-org					deinstall
+        mongodb-org-server			deinstall
+        mongodb-server				deinstall
+        # apt-get autoremove --purge mongodb-server
+        # apt-get autoremove --purge mongodb-org
+        # apt-get autoremove --purge mongodb-org-server
+        (complains about locale settings)
+        # export LANGUAGE=en_US.UTF-8
+        # export LANG=en_US.UTF-8
+        # export LC_ALL=en_US.UTF-8
+        # locale-gen en_US.UTF-8
+        # dpkg-reconfigure locales
+        # apt-get install mongodb-org-server
+        # apt-get install mongodb-org
+user    -> {user:"root", pwd:"=@!#@%$admin1", roles:[{role:"root", db:"admin"}]}
+start   -> mongo -u "root" -p --authenticationDatabase "admin"
