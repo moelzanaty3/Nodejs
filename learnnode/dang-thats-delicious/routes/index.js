@@ -9,11 +9,12 @@ router.get('/', (req, res) => {
     age: 25,
     title: 'Frontend Developer'
   }
-  res.json(info)
+  // res.json(info)
   // res.send(req.query)
   // res.status(500).json({error: 'message'})
   // res.redirect('http://google.com')
   // res.status(400).send('Bad Request');
+  res.render('hello')
 });
 
 router.get('/user/:id', (req, res) => {
